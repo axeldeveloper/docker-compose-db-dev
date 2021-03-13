@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  db-postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "766312"
+    ports:
+      - "15432:5432" 
+    volumes:
+      - /home/axel/Dev/docker/postgres/data:/var/lib/postgresql/data 
+      #- /home/axel/Desenvolvimento/Docker-Compose/PostgreSQL:/var/lib/postgresql/data 
+    networks:
+      - postgres-compose-network
+      
+  db-pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL    : "axelpatton@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD : "PgAdmin2019!"
+    ports:
+      - "16543:80"
+    depends_on:
+      - db-postgres
+    networks:
+      - postgres-compose-network
+
+networks: 
+  postgres-compose-network:
+    driver: bridge
