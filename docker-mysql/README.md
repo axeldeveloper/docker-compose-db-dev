@@ -3,4 +3,10 @@
     adminer
 
 # execute 
-   docker-compose.yml up -d
+   docker-compose up -d
+
+# using
+  host: mysqlsrv
+  user: root
+  pws: root
+  database: lifeapp 

@@ -4,8 +4,8 @@ services:
   mysqlsrv:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: "766312"
-      MYSQL_DATABASE: "dentallifeapp"
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "lifeapp"
     ports:
       - "3306:3306"
     volumes:
