@@ -4,23 +4,23 @@ services:
   mysqlsrv:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: "Mysql2019"
-      MYSQL_DATABASE: "sotnop"
+      MYSQL_ROOT_PASSWORD: "766312"
+      MYSQL_DATABASE: "dentallifeapp"
     ports:
       - "3306:3306"
     volumes:
-      - /home/axel/Dev/docker/mysql:/var/lib/mysql
+      - /Users/axel/Dev/docker/mysql:/var/lib/mysql
     networks:
-      - mysql-compose-network
+      - mysql-network
 
   adminer:
     image: adminer
     ports:
       - 8989:8080
     networks:
-      - mysql-compose-network
+      - mysql-network
 
 networks: 
-  mysql-compose-network:
+  mysql-network:
     driver: bridge
      
