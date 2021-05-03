@@ -4,7 +4,7 @@ services:
   db-postgres:
     image: postgres
     environment:
-      POSTGRES_PASSWORD: "766312"
+      POSTGRES_PASSWORD: "postgres"
     ports:
       - "15432:5432" 
     volumes:

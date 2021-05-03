@@ -3,3 +3,35 @@
 https://medium.com/@renato.groffe/postgresql-pgadmin-4-docker-compose-montando-rapidamente-um-ambiente-para-uso-55a2ab230b89
 https://gist.githubusercontent.com/renatogroffe/82459fb2a517b1b5db2172c81dc86d9c/raw/8b12c3a17989fd5dde7f3244c9962822b29fc4b9/docker-compose.yml
 https://miro.medium.com/max/700/1*iKh1dU9FH3iD9qPf5EA_CA.png
+
+
+version: '3'
+
+services:
+  db-postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - "15432:5432" 
+    volumes:
+      - /home/axel/Dev/docker/postgres/data:/var/lib/postgresql/data 
+      #- /home/axel/Desenvolvimento/Docker-Compose/PostgreSQL:/var/lib/postgresql/data 
+    networks:
+      - postgres-compose-network
+      
+  db-pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL    : "axelpatton@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD : "PgAdmin2019!"
+    ports:
+      - "16543:80"
+    depends_on:
+      - db-postgres
+    networks:
+      - postgres-compose-network
+
+networks: 
+  postgres-compose-network:
+    driver: bridge
