@@ -25,7 +25,7 @@
 
     >$ docker-machine create default --virtualbox-no-vtx-check 
 
-    >$ docker-machine create -d virtualbox --engine-env HTTP_PROXY=http://axbenites@fazenda:Axel@193@proxy.sgi.ms.gov.br:8080 -engine-env HTTPS_PROXY=https://axbenites@fazenda:Axel@193@proxy.sgi.ms.gov.br:8080 --engine-env NO_PROXY=example2.com default
+    >$ docker-machine create -d virtualbox --engine-env HTTP_PROXY=http://axbenites@fazenda:xxxxx@xx@proxy.spa.mo.br:8058 -engine-env HTTPS_PROXY=https://axbenites@fazenda:xxx@xx@proxy.spa.mo.br:8058 --engine-env NO_PROXY=example2.com default
 
     Docker is up and running!
     https://github.com/docker/machine/issues/4271
