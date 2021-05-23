@@ -4,7 +4,7 @@ services:
   db-postgres-compose:
     image: postgres
     environment:
-      POSTGRES_PASSWORD: "766312"
+      POSTGRES_PASSWORD: "postgres"
     ports:
       - "15432:5432" 
     volumes:
@@ -13,7 +13,7 @@ services:
       # - /home/axel/Dev/Docker/postgres/data:/var/lib/postgresql/data
       # - /home/renatogroffe/Desenvolvimento/Docker-Compose/PostgreSQL:/var/lib/postgresql/data 
     networks:
-      - postgres-compose-network
+      - postgres-network
       
   db-pgadmin-compose:
     image: dpage/pgadmin4
@@ -25,8 +25,8 @@ services:
     depends_on:
       - db-postgres-compose
     networks:
-      - postgres-compose-network
+      - postgres-network
 
 networks: 
-  postgres-compose-network:
+  postgres-network:
     driver: bridge
