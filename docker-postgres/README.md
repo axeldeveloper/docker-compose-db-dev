@@ -4,6 +4,12 @@
     pgadmin 4
 
 # Version 9
+    9
+
+# Execute
+
+    docker-compose up -d    
+
 
 # Build
     docker-compose up -d

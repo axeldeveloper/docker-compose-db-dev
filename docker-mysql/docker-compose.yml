@@ -5,7 +5,7 @@ services:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_DATABASE: "ltda_emprestimos"
+      MYSQL_DATABASE: "loja_meno"
     ports:
       - "3307:3306"
     volumes:
