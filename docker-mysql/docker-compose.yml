@@ -3,6 +3,7 @@ version: '3'
 services:
   mysqlsrv:
     image: mysql:5.7
+    container_name: mysql_db5
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "loja_meno"
@@ -16,6 +17,7 @@ services:
 
   adminer:
     image: adminer
+    container_name: mysql_adminer
     ports:
       - 8989:8080
     networks:
