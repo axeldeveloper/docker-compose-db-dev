@@ -8,6 +8,9 @@
 # Build
     docker-compose up -d
 
+    docker start/stop docker-postgres_db-postgres_1
+    docker start/stop docker-postgres_db-pgadmin_1 
+
 
 
 # links uteis

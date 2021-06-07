@@ -5,22 +5,23 @@ services:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_DATABASE: "lifeapp"
+      MYSQL_DATABASE: "ltda_emprestimos"
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
-      - /Users/axel/Dev/docker/mysql:/var/lib/mysql
+      - /home/axel/Dev/docker/mysql:/var/lib/mysql
+      # - /Users/axel/Dev/docker/mysql:/var/lib/mysql
     networks:
-      - mysql-network
+      - mysql-net
 
   adminer:
     image: adminer
     ports:
       - 8989:8080
     networks:
-      - mysql-network
+      - mysql-net
 
 networks: 
-  mysql-network:
+  mysql-net:
     driver: bridge
      

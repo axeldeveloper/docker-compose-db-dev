@@ -9,4 +9,4 @@
   host: mysqlsrv
   user: root
   pws: root
-  database: lifeapp 
+  database: ltda_emprestimos 
