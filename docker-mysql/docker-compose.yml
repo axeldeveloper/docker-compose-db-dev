@@ -10,17 +10,17 @@ services:
       - "3306:3306"
     volumes:
       - /home/axel/Dev/docker/mysql:/var/lib/mysql
+      #  - /Users/axel/Dev/docker/mysql:/var/lib/mysql
     networks:
-      - mysql-compose-network
+      - mysql-network
 
   adminer:
     image: adminer
     ports:
       - 8989:8080
     networks:
-      - mysql-compose-network
+      - mysql-network
 
 networks: 
-  mysql-compose-network:
+  mysql-network:
     driver: bridge
-     
