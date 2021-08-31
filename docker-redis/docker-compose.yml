@@ -3,6 +3,11 @@ version: '3'
 services:
   redis:
     image: redis
-    command: redis-server --requirepass Redis2019!
+    #image: 'redis:5-alpine'
+    # command: redis-server --requirepass Redis2019!
+    command: redis-server 
     ports:
       - "6379:6379"
+    volumes:
+      #- 'redis:/data'
+      - /home/axel/Dev/Docker/redis/data:/var/lib/redis/data  
