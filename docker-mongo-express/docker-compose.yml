@@ -3,6 +3,7 @@ version: '3'
 
 services:
   mongo-express:
+    container_name: db_mongo
     image: mongo-express
     ports:
       - 8081:8081
@@ -19,6 +20,7 @@ services:
 
   mongo:
     image: mongo
+    container_name: mongo_express
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: MongoDB2019!

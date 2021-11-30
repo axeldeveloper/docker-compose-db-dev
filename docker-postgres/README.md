@@ -6,10 +6,11 @@
 # Version 9
     9
 
-# Execute
+ # Build
+  > docker-compose up -d    
 
-    docker-compose up -d    
 
+(link 2)[https://medium.com/@renato.groffe/postgresql-pgadmin-4-docker-compose-montando-rapidamente-um-ambiente-para-uso-55a2ab230b89]
 
 # Build
     docker-compose up -d

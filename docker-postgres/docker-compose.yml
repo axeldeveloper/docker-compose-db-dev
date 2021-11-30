@@ -3,6 +3,8 @@ version: '3'
 services:
   db-postgres:
     image: postgres
+    container_name: db_postgres
+    # restart: always
     environment:
       POSTGRES_PASSWORD: "postgres"
     ports:
@@ -21,6 +23,7 @@ services:
       
   db-pgadmin:
     image: dpage/pgadmin4
+    container_name: pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL    : "axelpatton@gmail.com"
       PGADMIN_DEFAULT_PASSWORD : "demo123456"
