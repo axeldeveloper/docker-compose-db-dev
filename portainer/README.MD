@@ -13,6 +13,3 @@ docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.
 user = admin
 pwd = demo123
 
-
-
-/Users/axel/Dev
