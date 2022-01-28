@@ -9,28 +9,28 @@ services:
       - 8081:8081
     environment:
       ME_CONFIG_BASICAUTH_USERNAME: axel
-      ME_CONFIG_BASICAUTH_PASSWORD: Axel@193
+      ME_CONFIG_BASICAUTH_PASSWORD: demo123
       ME_CONFIG_MONGODB_PORT: 27017
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: MongoDB2019!
+      ME_CONFIG_MONGODB_ADMINPASSWORD: demo123
     links:
       - mongo
     networks:
-      - mongo-compose-network
+      - mongo-network
 
   mongo:
     image: mongo
     container_name: mongo_express
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: MongoDB2019!
+      MONGO_INITDB_ROOT_PASSWORD: demo123
     ports:
       - "27017:27017"
     volumes:
       - /home/axel/Dev/docker/mongo:/data/db
     networks:
-      - mongo-compose-network
+      - mongo-network
 
 networks: 
-    mongo-compose-network:
+    mongo-network:
       driver: bridge
