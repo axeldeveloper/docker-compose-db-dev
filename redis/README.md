@@ -4,9 +4,6 @@
 # Version last
     last
 
- # Build
-  > docker-compose up -d    
-
 # Build
     docker-compose up -d
 
