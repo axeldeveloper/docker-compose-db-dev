@@ -2,7 +2,7 @@ version: '2.2'
 services:
   es01:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.2
-    container_name: es01
+    container_name: elastic_07
     environment:
       - node.name=es01
       - cluster.name=es-docker-cluster
