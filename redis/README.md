@@ -4,8 +4,11 @@
 # Version last
     last
 
-# Build
-    docker-compose up -d
+# Build   
+``` powershell  
+    $ docker-compose up -d
 
-    docker start/stop cache_redis
-    docker start/stop cache_redis 
+    $ docker start/stop cache_redis
+    
+    $ docker start/stop cache_redis
+```    

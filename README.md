@@ -13,6 +13,16 @@
 
 - [my homepage](https://axe-dev.herokuapp.com/)
 
+<p align="center">
+    <a href="https://github.com/axeldeveloper"><img title="Author" src="https://img.shields.io/badge/AUTHOR-AXEL-orange.svg?style=for-the-badge&logo=github"></a>
+</p>
+
+
+<p align="center">
+    <a href="https://www.linkedin.com/in/axeldeveloper/"><img title="Linkedin" src="https://img.shields.io/badge/LINKDIN-AXEL-blue.svg?style=for-the-badge&logo=linkedin"></a>
+</p>
+
+
 # Contributing
 
 - Axel
@@ -28,6 +38,7 @@
   | Front | HTML | CSS    | VueJS | React | React |
   | ----- | ---- | ------ | ----- | ----- | ----- |
   | Back  | c#   | python | rails | go    | php   |
+
 
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
