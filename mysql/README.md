@@ -2,6 +2,9 @@
     mysql
     adminer
 
+# execute 
+   docker-compose up biuld -d
+
 # using
   host: mysqlsrv
   user: root
