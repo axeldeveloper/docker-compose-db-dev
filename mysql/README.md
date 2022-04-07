@@ -3,7 +3,7 @@
     adminer
 
 # execute 
-   docker-compose up -d
+   docker-compose up biuld -d
 
 # using
   host: mysqlsrv
