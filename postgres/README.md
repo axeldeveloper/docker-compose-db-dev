@@ -13,6 +13,15 @@
     docker start/stop docker-postgres_db-postgres_1
     docker start/stop docker-postgres_db-pgadmin_1 
 
+# test 
+    - docker exec -it db psql -U postgres
+    
+    To exit the psql process, type:
+    
+    exit
+    Or alternatively, just
+    \q
+
 
 # links uteis
 
