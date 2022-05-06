@@ -12,8 +12,8 @@ services:
     volumes:
       # Linux
       #- 'redis:/data'
-      #- /home/axel/Dev/Docker/redis/data:/var/lib/redis/data
+      - /home/axel/Dev/docker/redis/data:/var/lib/redis/data
       
       # MacOS
-      - /Users/axel/Dev/docker/redis/data:/var/lib/redis/data
+      # - /Users/axel/Dev/docker/redis/data:/var/lib/redis/data
       
