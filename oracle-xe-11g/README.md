@@ -34,30 +34,32 @@ Run with 1521 port opened:
 
 > $ docker run -d -p 49161:1521 -p 8080:8080 oracleinanutshell/oracle-xe-11g
 
-# Login http://localhost:8080/apex/apex_admin with following credential:
+# Login apex_admin
 
-username: ADMIN
-password: admin
-For latest APEX(18.1) user, please pull oracleinanutshell/oracle-xe-11g:18.04-apex first:
+    http://localhost:8080/apex/apex_admin with following credential:
 
-docker run -d -p 49161:1521 -p 8080:8080 oracleinanutshell/oracle-xe-11g:18.04-apex
+    username: ADMIN
+    password: admin
+    For latest APEX(18.1) user, please pull oracleinanutshell/oracle-xe-11g:18.04-apex first:
 
-# Login http://localhost:8080/apex/apex_admin with following credential:
+    docker run -d -p 49161:1521 -p 8080:8080 oracleinanutshell/oracle-xe-11g:18.04-apex
 
-username: ADMIN
-password: Oracle_11g
-By default, the password verification is disable(password never expired)
-Connect database with following setting:
+    Login http://localhost:8080/apex/apex_admin with following credential:
 
-hostname: localhost
-port:  
-sid: xe
-username: system
-password: oracle
-Password for SYS & SYSTEM
+    username: ADMIN
+    password: Oracle_11g
+    By default, the password verification is disable(password never expired)
+    Connect database with following setting:
 
-oracle
-Support custom DB Initialization and running shell scripts
+    hostname: localhost
+    port:  
+    sid: xe
+    username: system
+    password: oracle
+    Password for SYS & SYSTEM
+
+    oracle
+    Support custom DB Initialization and running shell scripts
 
 # Dockerfile
 
