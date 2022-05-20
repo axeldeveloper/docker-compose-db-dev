@@ -12,4 +12,3 @@
 
   user = admin
   pwd = demo123456
-
