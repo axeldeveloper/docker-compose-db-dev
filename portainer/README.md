@@ -9,4 +9,3 @@
 # Admin
     - user = admin
     - pwd = demo12345
-
