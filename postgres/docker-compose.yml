@@ -14,7 +14,7 @@ services:
       - /home/axel/Dev/docker/postgres/data:/var/lib/postgresql/data 
       
       # MacOS
-      # - /Users/axel/Dev/docker/postgres/data:/var/lib/postgres/data
+      #- /Users/axel/Dev/docker/postgres/data:/var/lib/postgres/data
       
       # windows
       #- /home/axel/Desenvolvimento/Docker-Compose/PostgreSQL:/var/lib/postgresql/data 
