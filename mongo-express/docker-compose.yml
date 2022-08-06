@@ -27,7 +27,10 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - /home/axel/Dev/docker/mongo:/data/db
+      # linux 
+      #- /home/axel/Dev/docker/mongo:/data/db
+      # MacOS
+       - /Users/axel/Dev/docker/mongo:/data/db
     networks:
       - mongo-network
 
