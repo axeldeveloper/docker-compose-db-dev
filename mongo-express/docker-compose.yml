@@ -2,28 +2,13 @@
 version: '3'
 
 services:
-  mongo-express:
-    container_name: db_mongo
-    image: mongo-express
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_BASICAUTH_USERNAME: axel
-      ME_CONFIG_BASICAUTH_PASSWORD: demo123
-      ME_CONFIG_MONGODB_PORT: 27017
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: demo123
-    links:
-      - mongo
-    networks:
-      - mongo-network
-
   mongo:
     image: mongo
-    container_name: mongo_express
+    container_name: mongo_db
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: demo123
+      #MONGO_INITDB_DATABASE: project
     ports:
       - "27017:27017"
     volumes:
@@ -31,6 +16,27 @@ services:
       #- /home/axel/Dev/docker/mongo:/data/db
       # MacOS
        - /Users/axel/Dev/docker/mongo:/data/db
+    networks:
+      - mongo-network
+  
+  mongo-express:
+    container_name: mongo_express 
+    image: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_BASICAUTH_USERNAME: axel
+      ME_CONFIG_BASICAUTH_PASSWORD: demo123
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_AUTH_USERNAME: root
+      ME_CONFIG_MONGODB_AUTH_PASSWORD: demo123
+      #ME_CONFIG_MONGODB_ENABLE_ADMIN: "false"
+      #ME_CONFIG_MONGODB_AUTH_DATABASE: admin  
+    depends_on:
+      - mongo
+    links:
+      - mongo
     networks:
       - mongo-network
 
