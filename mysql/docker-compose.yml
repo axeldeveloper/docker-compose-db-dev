@@ -5,15 +5,15 @@ services:
     image: mysql:5.7
     container_name: mysql_db5
     environment:
-      MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_DATABASE: "loja_meno"
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: "ltda_emprestimos"
     ports:
       - "3307:3306"
     volumes:
       # linux
-       - /home/axel/Dev/docker/mysql:/var/lib/mysql
+      - /home/axel/Dev/docker/mysql:/var/lib/mysql
       # macos
-      #- /Users/axel/Dev/docker/mysql:/var/lib/mysql
+      - /Users/axel/Dev/docker/mysql:/var/lib/mysql
     networks:
       - mysql-net
 
