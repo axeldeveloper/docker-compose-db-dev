@@ -1,6 +1,8 @@
 # DB Redis Cache
     mongo-express
 
+# run local
+    - http://127.0.0.1:8081/
 
 # Build   
 ``` powershell  
