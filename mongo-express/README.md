@@ -1,4 +1,7 @@
-# DB Redis Cache
+# Project 
+    - MongoDB
+    - Mongo express
+# DB Mongo 
     mongo-express
 
 # run local
