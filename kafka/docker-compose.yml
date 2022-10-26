@@ -10,6 +10,7 @@ services:
 
   kafka:
     image: confluentinc/cp-kafka:latest
+    container_name: cache_kafka
     networks: 
       - broker-kafka
     depends_on:
@@ -26,6 +27,7 @@ services:
 
   kafdrop:
     image: obsidiandynamics/kafdrop:latest
+    container_name: cache_kafdrop
     networks: 
       - broker-kafka
     depends_on:
