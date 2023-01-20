@@ -5,3 +5,4 @@ docker-image-ubuntu-18-go11/
 docker-flask-py37/
 data/
 .DS_Store
+./rabbitMQ/storage
