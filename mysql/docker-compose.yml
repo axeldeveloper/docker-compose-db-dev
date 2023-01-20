@@ -13,7 +13,7 @@ services:
       # linux
       - /home/axel/Dev/docker/mysql:/var/lib/mysql
       # macos
-      - /Users/axel/Dev/docker/mysql:/var/lib/mysql
+      #- /Users/axel/Dev/docker/mysql:/var/lib/mysql
     networks:
       - mysql-net
 
