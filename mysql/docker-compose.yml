@@ -10,14 +10,13 @@ services:
       #MYSQL_ROOT_HOST: ${DB_HOST}
       #MYSQL_USER: ${DB_USER}
       #MYSQL_PASSWORD: "root"
-
     ports:
       - "3307:3306"
     volumes:
       # linux
       #- /home/axel/Dev/docker/mysql:/var/lib/mysql
       # macos
-      - /Users/axel/Dev/docker/mysql:/var/lib/mysql
+      #- /Users/axel/Dev/docker/mysql:/var/lib/mysql
     networks:
       - mysql-net
 

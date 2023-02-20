@@ -1,33 +1,34 @@
 # DATABASE IN DOCKER
-- postgres
-- mysql
-- mongo
-- redis
-- elasticsearch
+- Postgres
+- Mysql
+- Mongo
+- Redis
+- Elasticsearch
 
 # Development
-
-   - Axel Alexander
+- Axel Alexander
 
 # My web site
 
 - [my homepage](https://axe-dev.herokuapp.com/)
 
 <p align="center">
-    <a href="https://github.com/axeldeveloper"><img title="Author" src="https://img.shields.io/badge/AUTHOR-AXEL-orange.svg?style=for-the-badge&logo=github"></a>
+    <a href="https://github.com/axeldeveloper">
+        <img title="Author" src="https://img.shields.io/badge/AUTHOR-AXEL-orange.svg?style=for-the-badge&logo=github">
+    </a>
 </p>
 
 
 <p align="center">
-    <a href="https://www.linkedin.com/in/axeldeveloper/"><img title="Linkedin" src="https://img.shields.io/badge/LINKDIN-AXEL-blue.svg?style=for-the-badge&logo=linkedin"></a>
+    <a href="https://www.linkedin.com/in/axeldeveloper/">
+        <img title="Linkedin" src="https://img.shields.io/badge/LINKDIN-AXEL-blue.svg?style=for-the-badge&logo=linkedin">
+    </a>
 </p>
 
 
 # Contributing
 
 - Axel
-- anomimous
-
 
 # Versioning
 
