@@ -7,6 +7,10 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "loja_meno"
+      #MYSQL_ROOT_HOST: ${DB_HOST}
+      #MYSQL_USER: ${DB_USER}
+      #MYSQL_PASSWORD: "root"
+
     ports:
       - "3307:3306"
     volumes:
@@ -25,6 +29,22 @@ services:
     networks:
       - mysql-net
 
-networks: 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_container
+    depends_on:
+      - mysqlsrv
+    environment:
+      - PMA_HOST=mysqlsrv # Note the "fullstack-mysql". Must be the name of the what you used as the mysql service.
+      - PMA_USER=axel
+      - PMA_PORT=8083
+      - PMA_PASSWORD=demo1234
+    ports:
+      - 9090:80
+    restart: always
+    networks:
+      - mysql-net
+
+networks:
   mysql-net:
     driver: bridge
