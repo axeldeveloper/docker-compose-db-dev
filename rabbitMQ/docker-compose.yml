@@ -1,7 +1,8 @@
 version: "3.2"
 services:
   rabbitmq:
-    image: rabbitmq:3-management-alpine
+    #image: rabbitmq:3-management-alpine
+    image: rabbitmq:3-management
     container_name: 'rabbitmq'
     ports:
         - 5672:5672
@@ -9,12 +10,15 @@ services:
     volumes:
         #- ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
         #- ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
-        - $PWD/storage/rabbitmq1:/var/lib/rabbitmq
+        - /Users/axel/Dev/docker/rabbitmq/data:/var/lib/postgres/data
+        #- $PWD/Dev/rabbitmq1:/var/lib/rabbitmq
+        # MacOS
+        #- /Users/axel/Dev/docker/rabbitmq/data:/var/lib/rabbitmq
     environment:
         - RABBITMQ_ERLANG_COOKIE=This_is_my_secret_phrase
         - RABBITMQ_DEFAULT_USER=admin
         - RABBITMQ_DEFAULT_PASS=demo123
-        # - CLUSTERED=true  
+        # - CLUSTERED=true
     networks:
         - rabbitmq_go_net
 networks:
