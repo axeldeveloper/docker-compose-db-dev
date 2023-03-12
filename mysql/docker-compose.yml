@@ -15,9 +15,9 @@ services:
       - "3307:3306"
     volumes:
       # linux
-      #- /home/axel/Dev/docker/mysql:/var/lib/mysql
+      - /home/axel/Dev/docker/mysql_5:/var/lib/mysql
       #macos
-      - /Users/axel/Dev/docker/mysql_5:/var/lib/mysql
+      #- /Users/axel/Dev/docker/mysql_5:/var/lib/mysql
       #- data:/var/lib/mysql
     networks:
       - mysql-net
@@ -45,7 +45,7 @@ services:
       - PMA_ARBITRARY=1
     ports:
       - 9090:80
-    restart: always
+    # restart: always
     networks:
       - mysql-net
 
