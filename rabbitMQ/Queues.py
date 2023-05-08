@@ -2,7 +2,7 @@ import pika
 import json
 import time
 
-class Queue:
+class Queues:
     def __init__(self, name, conf):
         self.name = name
         self.conf = conf
