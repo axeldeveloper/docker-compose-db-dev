@@ -1,5 +1,6 @@
 # Quick Start
-    Gerenciador de container na web
+    - Gerenciador de container na web
+    - Database
 # Linux
     docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /home/axel/Dev/docker/Portainer/data:/data portainer/portainer
 
