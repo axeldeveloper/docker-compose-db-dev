@@ -13,6 +13,8 @@
     
     No atributo Username será informado o usuário default do PostgreSQL (postgres), bem como a senha correspondente em Password (demo123)   
 
+# start Postgres in Machine
+    - sudo service postgresql stop
 
 
 

@@ -3,6 +3,7 @@ version: '3'
 services:
   redis:
     image: redis
+    #image: redis:6-alpine
     container_name: cache_redis
     # image: 'redis:5-alpine'
     # command: redis-server --requirepass Redis2019!
@@ -10,10 +11,13 @@ services:
     ports:
       - "6379:6379"
     #volumes:
-    #  - F:\Data:/var/www/html
+      # window
+      #  - F:\Data:/var/www/html
+
       # Linux
       #- 'redis:/data'
-      #- /home/axel/Dev/Docker/redis/data:/var/lib/redis/data
+      - /home/axel/Dev/docker/redis/data:/var/lib/redis/data
 
       # MacOS
-      #- /Users/axel/Dev/docker/redis/data:/var/lib/redis/data
+      # - /Users/axel/Dev/docker/redis/data:/var/lib/redis/data
+

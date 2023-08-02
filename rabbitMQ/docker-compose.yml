@@ -1,7 +1,8 @@
 version: "3.2"
 services:
   rabbitmq:
-    image: rabbitmq:3-management-alpine
+    #image: rabbitmq:3-management-alpine
+    image: rabbitmq:3-management
     container_name: 'rabbitmq'
     ports:
         - 5672:5672
@@ -10,8 +11,12 @@ services:
         #- ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
         #- ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
         #- $PWD/storage/rabbitmq1:/var/lib/rabbitmq
-        #- /home/axel/Desenvolvimento/Docker-Compose/PostgreSQL:/var/lib/postgresql/data
-        - "E:/Desenvolvimento/Docker/data:/var/lib/rabbitmq"
+        #- /home/axel/Dev/Docker/rabbitmq1:/var/lib/rabbitmq
+        # windows
+        #- "E:/Desenvolvimento/Docker/data:/var/lib/rabbitmq"
+        #- $PWD/Dev/rabbitmq1:/var/lib/rabbitmq
+        # MacOS
+        # - /Users/axel/Dev/docker/rabbitmq/data:/var/lib/rabbitmq
     environment:
         - RABBITMQ_ERLANG_COOKIE=This_is_my_secret_phrase
         - RABBITMQ_DEFAULT_USER=admin

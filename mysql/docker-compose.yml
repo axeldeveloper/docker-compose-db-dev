@@ -3,17 +3,23 @@ version: '3'
 services:
   mysqlsrv:
     image: mysql:5.7
+    platform: linux/x86_64
     container_name: mysql_db5
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "loja_meno"
+      #MYSQL_ROOT_HOST: ${DB_HOST}
+      #MYSQL_USER: ${DB_USER}
+      #MYSQL_PASSWORD: "root"
     ports:
       - "3307:3306"
     volumes:
       # linux
-      - /home/axel/Dev/docker/mysql:/var/lib/mysql
+      - /home/axel/Dev/docker/mysql_5:/var/lib/mysql
       # macos
+      #- /Users/axel/Dev/docker/mysql_5:/var/lib/mysql
       #- /Users/axel/Dev/docker/mysql:/var/lib/mysql
+      #- data:/var/lib/mysql
     networks:
       - mysql-net
 
@@ -25,6 +31,28 @@ services:
     networks:
       - mysql-net
 
-networks: 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_container
+    links:
+      - mysqlsrv
+    depends_on:
+      - mysqlsrv
+    environment:
+      - PMA_HOST=mysqlsrv # Note the "fullstack-mysql". Must be the name of the what you used as the mysql service.
+      #- PMA_USER=root
+      #- PMA_PORT=8083
+      #- PMA_PASSWORD=demo1234
+      - PMA_ARBITRARY=1
+    ports:
+      - 9090:80
+    # restart: always
+    networks:
+      - mysql-net
+
+volumes:
+  data:
+
+networks:
   mysql-net:
     driver: bridge

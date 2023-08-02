@@ -1,7 +1,12 @@
-docker-elixir-phoenix-pg/
-docker-elixir-phoenix-pg-api/
-docker-ruby-rails-pg/
-docker-image-ubuntu-18-go11/
-docker-flask-py37/
+*.pyc
+.pyc
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
 data/
 .DS_Store
+./rabbitMQ/storage
