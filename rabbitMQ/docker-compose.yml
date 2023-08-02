@@ -9,12 +9,14 @@ services:
     volumes:
         #- ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
         #- ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
-        - $PWD/storage/rabbitmq1:/var/lib/rabbitmq
+        #- $PWD/storage/rabbitmq1:/var/lib/rabbitmq
+        #- /home/axel/Desenvolvimento/Docker-Compose/PostgreSQL:/var/lib/postgresql/data
+        - "E:/Desenvolvimento/Docker/data:/var/lib/rabbitmq"
     environment:
         - RABBITMQ_ERLANG_COOKIE=This_is_my_secret_phrase
         - RABBITMQ_DEFAULT_USER=admin
         - RABBITMQ_DEFAULT_PASS=demo123
-        # - CLUSTERED=true  
+        # - CLUSTERED=true
     networks:
         - rabbitmq_go_net
 networks:
