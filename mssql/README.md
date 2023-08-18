@@ -14,6 +14,8 @@
 
     $ docker start/stop db_sqlserver
 
+    docker compose -f "mssql/docker-compose-v2.yml" up -d --build 
+
 ```
 
 # docker

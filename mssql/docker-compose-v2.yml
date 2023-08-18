@@ -6,7 +6,7 @@ networks:
 services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2017-latest
-    container_name: sqlserver
+    container_name: mssql_db
     user: root
     ports:
       - "1433:1433"
@@ -16,5 +16,10 @@ services:
       ACCEPT_EULA: Y
       MSSQL_AGENT_ENABLED: 'true'
     volumes:
-      - ./volumes/data2:/var/opt/mssql/data
-      - ./volumes/backup:/var/opt/mssql/Backup
+      #- ./volumes/data2:/var/opt/mssql/data
+      #- ./volumes/backup:/var/opt/mssql/Backup
+      - /home/axel/Dev/docker/mssql/data:/var/opt/mssql/data
+      - /home/axel/Dev/docker/mssql/backup:/var/opt/mssql/Backup
+    network_mode: bridge
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
