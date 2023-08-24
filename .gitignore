@@ -1,0 +1,12 @@
+*.pyc
+.pyc
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+data/
+.DS_Store
+./rabbitMQ/storage
