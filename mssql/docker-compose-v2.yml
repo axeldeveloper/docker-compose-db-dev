@@ -12,12 +12,10 @@ services:
       - "1433:1433"
     environment:
       SA_USERNAME: sa
-      SA_PASSWORD: Dev1234!
+      SA_PASSWORD: Proj@2501
       ACCEPT_EULA: Y
       MSSQL_AGENT_ENABLED: 'true'
     volumes:
-      #- ./volumes/data2:/var/opt/mssql/data
-      #- ./volumes/backup:/var/opt/mssql/Backup
       - /home/axel/Dev/docker/mssql/data:/var/opt/mssql/data
       - /home/axel/Dev/docker/mssql/backup:/var/opt/mssql/Backup
     network_mode: bridge
