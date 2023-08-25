@@ -24,6 +24,9 @@ $ docker compose -f "mysql\docker-compose.yml" up
 # My web site
 
 - [my homepage](https://axe-dev.herokuapp.com/)
+# My web site
+
+- [My homepage](https://axeldeveloper.github.io/)
 
 <p align="center">
     <a href="https://github.com/axeldeveloper">
@@ -49,9 +52,10 @@ $ docker compose -f "mysql\docker-compose.yml" up
 
  **Axel Alexander ** - _web site_ - [contact and contracts](http://axel-dev.herokuapp.com/)
 
-  | Front | HTML | CSS    | VueJS | React | React |
-  | ----- | ---- | ------ | ----- | ----- | ----- |
-  | Back  | c#   | python | rails | go    | php   |
+  | Front | HTML | CSS    | VueJS | React | React | Flutter |
+  | ----- | ---- | ------ | ----- | ----- | ----- | ------- |
+  | Back  | c#   | python | rails | go    | php   | nodejs  |
+
 
 
 

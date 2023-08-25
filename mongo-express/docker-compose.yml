@@ -20,8 +20,10 @@ services:
     networks:
       - mongo-network
 
+
   mongo-express:
     container_name: mongo_express
+    #image: mongo-express
     image: mongo-express:latest
     #restart: always
     #links:

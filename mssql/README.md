@@ -1,5 +1,6 @@
 # DB MSSQL
 - mssql-server-linux-tinytds:2017-GA `imagem`
+- mcr.microsoft.com/mssql/server:2017-latest `imagem`
 
 
 # Version 9
@@ -12,7 +13,9 @@
 ``` powershell
     $ docker-compose up -d
 
-    $ docker start/stop db_sqlserver
+    $ docker start/stop mssql_tinytds
+
+    docker compose -f "mssql/docker-compose-v2.yml" up -d --build
 
 ```
 
