@@ -11,16 +11,17 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      # linux 
-      - /home/axel/Dev/docker/mongo:/data/db
+      # linux
+      # - /home/axel/Dev/docker/mongo:/data/db
       # MacOS
       # - /Users/axel/Dev/docker/mongo:/data/db
+      # win
+      - E:\Desenvolvimento\Docker\mongo:/var/www/html
     networks:
       - mongo-network
-  
+
   mongo-express:
-    container_name: mongo_express 
-    #image: mongo-express
+    container_name: mongo_express
     image: mongo-express:latest
     #restart: always
     #links:
@@ -38,10 +39,10 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: demo123
       #ME_CONFIG_MONGODB_SERVER: mongo
       #ME_CONFIG_MONGODB_ENABLE_ADMIN: "false"
-      #ME_CONFIG_MONGODB_AUTH_DATABASE: admin 
+      #ME_CONFIG_MONGODB_AUTH_DATABASE: admin
     networks:
       - mongo-network
-      
-networks: 
+
+networks:
     mongo-network:
       driver: bridge

@@ -8,6 +8,19 @@
 # Development
 - Axel Alexander
 
+
+# run
+## exec individual
+```sh
+# mssql server 2017
+$ docker compose -f "mssql\docker-compose-v2.yml" up
+
+# mysql server 2017
+$ docker compose -f "mysql\docker-compose.yml" up
+
+```
+
+
 # My web site
 
 - [my homepage](https://axe-dev.herokuapp.com/)

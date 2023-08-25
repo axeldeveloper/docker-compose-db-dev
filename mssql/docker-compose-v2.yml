@@ -18,3 +18,5 @@ services:
     volumes:
       - ./volumes/data2:/var/opt/mssql/data
       - ./volumes/backup:/var/opt/mssql/Backup
+    extra_hosts:
+        - "host.docker.internal:host-gateway"
