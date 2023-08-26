@@ -8,6 +8,20 @@
 # Development
 - Axel Alexander
 
+
+# run
+## exec individual
+```sh
+# mssql server 2017
+$ docker compose -f "mssql\docker-compose-v2.yml" up
+
+# mysql server 2017
+$ docker compose -f "mysql\docker-compose.yml" up
+
+```
+
+
+
 # My web site
 
 - [My homepage](https://axeldeveloper.github.io/)
@@ -39,7 +53,6 @@
   | Front | HTML | CSS    | VueJS | React | React | Flutter |
   | ----- | ---- | ------ | ----- | ----- | ----- | ------- |
   | Back  | c#   | python | rails | go    | php   | nodejs  |
-
 
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.

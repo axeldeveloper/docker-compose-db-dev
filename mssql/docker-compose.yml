@@ -6,17 +6,13 @@ networks:
 services:
   mssql:
     image: metaskills/mssql-server-linux-tinytds:2017-GA
-    container_name: db_sqlserver
+    container_name: mssql_tinytds
     ports:
       - "1433:1433"
+    environment:
+      SA_USERNAME: sa
+      SA_PASSWORD: Dev1234!
+      ACCEPT_EULA: Y
+      MSSQL_AGENT_ENABLED: 'true'
     networks:
       - main-network
-
-  #toxiproxy:
-  #  image: shopify/toxiproxy
-  #  container_name: toxiproxy
-  #  ports:
-  #    - "8474:8474"
-  #    - "1234:1234"
-  #  networks:
-  #    - main-network
