@@ -17,7 +17,8 @@ services:
 
 # Quick Start
 
-Run with 1521 port opened:
+- Run with 1521 port opened:
+```sh
 
 docker run -d -p 49161:1521 container-registry.oracle.com/database/free
 
@@ -32,6 +33,17 @@ $ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true oracleinanutshell/orac
 $ docker run -d -p 49161:1521 -e ORACLE_DISABLE_ASYNCH_IO=true oracleinanutshell/oracle-xe-11g
 # Enable XDB user with default password: xdb, run this:
 
+# Run this, if you want the database to be connected remotely:
+$ docker run -d -p 49161:1521 oracleinanutshell/oracle-xe-11g
+
+
+# For performance concern, you may want to disable the disk asynch IO:
+$ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true oracleinanutshell/oracle-xe-11g
+
+# Enable XDB user with default password: xdb, run this:
+$ docker run -d -p 49161:1521 -e ORACLE_DISABLE_ASYNCH_IO=true oracleinanutshell/oracle-xe-11g
+
+
 $ docker run -d -p 49161:1521 -e ORACLE_ENABLE_XDB=true oracleinanutshell/oracle-xe-11g
 
 ## For APEX user:
@@ -41,34 +53,37 @@ $ docker run -d -p 49161:1521 -p 8080:8080 oracleinanutshell/oracle-xe-11g
 ```
 # Login apex_admin
 
-    http://localhost:8080/apex/apex_admin with following credential:
+  http://localhost:8080/apex/apex_admin with following
+credential:
 
-    username: ADMIN
-    password: admin
-    For latest APEX(18.1) user, please pull oracleinanutshell/oracle-xe-11g:18.04-apex first:
+  - username: ADMIN
+  - password: admin - temporario trocar
 
-    docker run -d -p 49161:1521 -p 8080:8080 oracleinanutshell/oracle-xe-11g:18.04-apex
+```sh
+$ docker run -d -p 49161:1521 -p 8080:8080 oracleinanutshell/oracle-xe-11g:18.04-apex
 
-    Login http://localhost:8080/apex/apex_admin with following credential:
+# Login http://localhost:8080/apex/apex_admin with following credential:
 
-    username: ADMIN
-    password: Oracle_11g
-    By default, the password verification is disable(password never expired)
-    Connect database with following setting:
+username: ADMIN
+password: Oracle_11g
 
-    hostname: localhost
-    port:  
-    sid: xe
-    username: system
-    password: oracle
-    Password for SYS & SYSTEM
+By default, the password verification is disable(password never expired)
+Connect database with following setting:
 
-    oracle
-    Support custom DB Initialization and running shell scripts
+hostname: localhost
+port:   49161:1521
+sid: xe
+username: system
+password: oracle
+Password for SYS & SYSTEM
 
-    username/password: SYS/oracle
-SID: orcl
+#oracle
+#Support custom DB Initialization and running shell #scripts
 
+# username/password: SYS/oracle
+# SID: orcl
+
+```
 # Dockerfile
 
 ```Dockerfile
@@ -83,4 +98,17 @@ https://blogdocardoso.com/linux-mint-instalando-o-oracle-sql-developer-4/
 ## INSTALL CLIENT
 
 https://oracle.github.io/odpi/doc/installation.html#linux
+
+
+# docker pull container-registry.oracle.com/database/free:latest
+
+# docker run -d --name app-oracle-db -p 1521:1521  -e ORACLE_PWD=oracle container-registry.oracle.com/database/free:latest
+
+#  sudo docker-compose -f ./docker-compose.free.yml up --build
+
 ```
+- docker pull container-registry.oracle.com/database/free:latest
+
+- docker run -d --name app-oracle-db -p 1521:1521  -e ORACLE_PWD=oracle container-registry.oracle.com/database/free:latest
+
+-  sudo docker-compose -f ./docker-compose.free.yml up --build
