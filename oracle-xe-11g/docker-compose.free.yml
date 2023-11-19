@@ -1,0 +1,25 @@
+version: '3.1'
+services:
+  oracle-db:
+    container_name: app_oracle_free
+    image: container-registry.oracle.com/database/free:latest
+    environment:
+      - ORACLE_SID=FREE
+      - ORACLE_PDB=FREEPDB1
+      - ORACLE_PWD=oracle
+    ports:
+      - 1521:1521
+       # - 8080:8080
+      - 5500:5500
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+      - oracle-backup:/opt/oracle/backup
+    #healthcheck:
+    #  test: ["CMD", "sqlplus", "-L", "sys/oracle@//localhost:1521/FREE as sysdba", "@healthcheck.sql"]
+    #  interval: 30s
+    #  timeout: 10s
+    #  retries: 5
+
+volumes:
+  oracle-data:
+  oracle-backup:

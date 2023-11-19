@@ -1,9 +1,24 @@
-version: '3'
+version: '3.4'
 
-services: 
+services:
   oracle-db:
-    container_name: oracle_11g
-    image: oracleinanutshell/oracle-xe-11g:latest
+    container_name: app_oracle_11g
+    image: oracleinanutshell/oracle-xe-11g
+    privileged: true
     ports:
       - 1521:1521
       - 5500:5500
+      #- 8080:8080
+    environment:
+      - ORACLE_SID=XE
+      - ORACLE_PDB=XE
+    #  - ORACLE_ALLOW_REMOTE=true
+    volumes:
+      - db-vol:/opt/oracle/oradata
+
+volumes:
+ db-vol:
+
+  # docker pull container-registry.oracle.com/database/free:latest
+  # docker run -d --name app-oracle-db -p 1521:1521  -e ORACLE_PWD=oracle container-registry.oracle.com/database/free:latest
+  #  sudo docker-compose -f ./docker-compose.free.yml up --build

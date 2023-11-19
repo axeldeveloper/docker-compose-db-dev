@@ -19,21 +19,26 @@ services:
 
 Run with 1521 port opened:
 
-> $ docker run -d -p 49161:1521 oracleinanutshell/oracle-xe-11g
-> ---Run this, if you want the database to be connected remotely:
+docker run -d -p 49161:1521 container-registry.oracle.com/database/free
 
-> $ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true oracleinanutshell/oracle-xe-11g
-> ---For performance concern, you may want to disable the disk asynch IO:
 
-> $ docker run -d -p 49161:1521 -e ORACLE_DISABLE_ASYNCH_IO=true oracleinanutshell/oracle-xe-11g
-> --Enable XDB user with default password: xdb, run this:
+```powershell
+$ docker run -d -p 49161:1521 oracleinanutshell/oracle-xe-11g
+# Run this, if you want the database to be connected remotely:
 
-> $ docker run -d -p 49161:1521 -e ORACLE_ENABLE_XDB=true oracleinanutshell/oracle-xe-11g
+$ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true oracleinanutshell/oracle-xe-11g
+# For performance concern, you may want to disable the disk asynch IO:
+
+$ docker run -d -p 49161:1521 -e ORACLE_DISABLE_ASYNCH_IO=true oracleinanutshell/oracle-xe-11g
+# Enable XDB user with default password: xdb, run this:
+
+$ docker run -d -p 49161:1521 -e ORACLE_ENABLE_XDB=true oracleinanutshell/oracle-xe-11g
 
 ## For APEX user:
 
-> $ docker run -d -p 49161:1521 -p 8080:8080 oracleinanutshell/oracle-xe-11g
+$ docker run -d -p 49161:1521 -p 8080:8080 oracleinanutshell/oracle-xe-11g
 
+```
 # Login apex_admin
 
     http://localhost:8080/apex/apex_admin with following credential:
@@ -60,6 +65,9 @@ Run with 1521 port opened:
 
     oracle
     Support custom DB Initialization and running shell scripts
+
+    username/password: SYS/oracle
+SID: orcl
 
 # Dockerfile
 
