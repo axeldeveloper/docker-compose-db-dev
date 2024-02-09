@@ -11,7 +11,7 @@ services:
       - "5432:5432"
     volumes:
       # linux
-      - /home/axel/Dev/docker/postgres/data:/var/lib/postgresql/data
+      # - /home/axel/Dev/docker/postgres/data:/var/lib/postgresql/data
       #- /home/axel/Dev/docker/postgres_1/data:/var/lib/postgresql/data
 
       # MacOS
@@ -19,6 +19,10 @@ services:
 
       # windows
       #- /home/axel/Desenvolvimento/Docker-Compose/PostgreSQL:/var/lib/postgresql/data
+      - E:\Desenvolvimento\Docker\postgres_default:/var/www/html
+      # Local
+      #- ./volumes/data2:/var/opt/mssql/data
+      #- ./volumes/backup:/var/opt/mssql/Backup
     networks:
       - postgres-net
 
