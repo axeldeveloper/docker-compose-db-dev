@@ -13,7 +13,7 @@ services:
         #- $PWD/storage/rabbitmq1:/var/lib/rabbitmq
         #- /home/axel/Dev/Docker/rabbitmq1:/var/lib/rabbitmq
         # windows
-        #- "E:/Desenvolvimento/Docker/data:/var/lib/rabbitmq"
+        - "E:/Desenvolvimento/Docker/data:/var/lib/rabbitmq"
         #- $PWD/Dev/rabbitmq1:/var/lib/rabbitmq
         # MacOS
         # - /Users/axel/Dev/docker/rabbitmq/data:/var/lib/rabbitmq

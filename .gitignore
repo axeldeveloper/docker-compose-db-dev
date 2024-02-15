@@ -10,3 +10,5 @@ __pycache__/
 data/
 .DS_Store
 ./rabbitMQ/storage
+./rabbitMQ/venv311
+rabbitMQ/venv311
