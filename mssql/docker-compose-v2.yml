@@ -19,14 +19,19 @@ services:
       # linux
       #- /home/axel/Dev/docker/mssql/data:/var/opt/mssql/data
       #- /home/axel/Dev/docker/mssql/backup:/var/opt/mssql/Backup
+
       # win
       #- E:\Desenvolvimento\Docker\mongo:/var/www/html
+      - E:\data\db\mssql\data:/var/opt/mssql/data
+      - E:\data\db\mssql\/backup:/var/opt/mssql/Backup
+
       # Local
       #- ./volumes/data2:/var/opt/mssql/data
       #- ./volumes/backup:/var/opt/mssql/Backup
+
       # macos
-      - /Users/axel/Dev/docker/data:/var/opt/mssql/data
-      - /Users/axel/Dev/docker/mssql/backup:/var/opt/mssql/Backup
+      # - /Users/axel/Dev/docker/data:/var/opt/mssql/data
+      # - /Users/axel/Dev/docker/mssql/backup:/var/opt/mssql/Backup
     #network_mode: bridge
     extra_hosts:
       - "host.docker.internal:host-gateway"
