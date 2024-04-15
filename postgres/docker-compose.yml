@@ -15,11 +15,11 @@ services:
       #- /home/axel/Dev/docker/postgres_1/data:/var/lib/postgresql/data
 
       # MacOS
-      - /Users/axel/Dev/docker/postgres_default/data:/var/lib/postgres/data
+      # - /Users/axel/Dev/docker/postgres_default/data:/var/lib/postgres/data
 
       # windows
       #- /home/axel/Desenvolvimento/Docker-Compose/PostgreSQL:/var/lib/postgresql/data
-      # - E:\Desenvolvimento\Docker\postgres_default:/var/www/html
+      - D:\data\db\postgres\postgres_default:/var/www/html
       
       # Local
       #- ./volumes/data2:/var/opt/mssql/data
