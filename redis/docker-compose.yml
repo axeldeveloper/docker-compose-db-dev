@@ -13,6 +13,7 @@ services:
     volumes:
       # window
       #  - F:\Data:/var/www/html
+      - E:/data/db/redis/data:/var/lib/redis/data
 
       # Linux
       #- 'redis:/data'
@@ -20,4 +21,3 @@ services:
 
       # MacOS
       - /Users/axel/Dev/docker/redis/data:/var/lib/redis/data
-

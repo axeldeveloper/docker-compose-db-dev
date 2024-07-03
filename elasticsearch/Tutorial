@@ -1,0 +1,5 @@
+#link
+https://markheath.net/post/exploring-elasticsearch-with-docker
+
+
+docker-compose -f docker-compose.yml up -d

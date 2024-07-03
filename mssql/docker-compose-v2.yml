@@ -6,27 +6,34 @@ networks:
 services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2017-latest
+    #image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: mssql_db
     user: root
     ports:
       - "1433:1433"
     environment:
-      SA_USERNAME: sa
-      SA_PASSWORD: Dev1234!
+      #SA_USERNAME: sa
+      #SA_PASSWORD: Dev1234!
+      MSSQL_SA_PASSWORD: Dev1234#
       ACCEPT_EULA: Y
       MSSQL_AGENT_ENABLED: true
     volumes:
       # linux
       #- /home/axel/Dev/docker/mssql/data:/var/opt/mssql/data
       #- /home/axel/Dev/docker/mssql/backup:/var/opt/mssql/Backup
+
       # win
       #- E:\Desenvolvimento\Docker\mongo:/var/www/html
+      - E:\data\db\mssql\data:/var/opt/mssql/data
+      - E:\data\db\mssql\/backup:/var/opt/mssql/Backup
+
       # Local
       #- ./volumes/data2:/var/opt/mssql/data
       #- ./volumes/backup:/var/opt/mssql/Backup
+
       # macos
-      - /Users/axel/Dev/docker/data:/var/opt/mssql/data
-      - /Users/axel/Dev/docker/mssql/backup:/var/opt/mssql/Backup
-    #network_mode: bridge
+      # - /Users/axel/Dev/docker/data:/var/opt/mssql/data
+      # - /Users/axel/Dev/docker/mssql/backup:/var/opt/mssql/Backup
+    network_mode: bridge
     extra_hosts:
       - "host.docker.internal:host-gateway"

@@ -10,3 +10,11 @@ __pycache__/
 data/
 .DS_Store
 ./rabbitMQ/storage
+./rabbitMQ/venv311
+rabbitMQ/venv311
+
+
+./fhv_tripdata_2021-07.csv.gz
+fhv_tripdata_2021-07.csv.gz
+./spark/fhv_tripdata_2021-07.csv.gz
+spark/fhv_tripdata_2021-07.csv.gz
