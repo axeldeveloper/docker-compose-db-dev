@@ -1,26 +1,37 @@
-# Installation(with Ubuntu 18.04)
+# Contêiner do Oracle Database 23ai (23.4.0.0)
 
-> $ docker pull oracleinanutshell/oracle-xe-11g
-
-# Docker Compose
-
-```yml
-version: "3"
-
-services:
-  oracle-db:
-    image: oracleinanutshell/oracle-xe-11g:latest
-    ports:
-      - 1521:1521
-      - 5500:5500
-```
 
 # Quick Start
 
-- Run with 1521 port opened:
-```sh
 
-docker run -d -p 49161:1521 container-registry.oracle.com/database/free
+```sh
+# Run with 1521 port opened:
+
+$ docker pull container-registry.oracle.com/database/free:latest
+
+$ docker run -d --name app-oracle-db -p 1521:1521  -e ORACLE_PWD=oracle container-registry.oracle.com/database/free:latest
+
+# using docker compose
+$ sudo docker-compose -f ./docker-compose.free.yml up --build
+
+$ docker run -d --name app-oracle-db -p 1521:1521  -e ORACLE_PWD=oracle container-registry.oracle.com/database/free:latest
+
+docker exec -it app-oracle-db sqlplus sys/oracle@FREE as sysdba
+
+```
+
+# Configurações personalizadas
+
+```sh
+podman run --name <container name> \
+-P | -p <host port>:1521 \
+-e ORACLE_PWD=<your database passwords> \
+-e ORACLE_CHARACTERSET=<your character set> \
+-e ENABLE_ARCHIVELOG=true \
+-e ENABLE_FORCE_LOGGING=true \
+-v [<host mount point>:]/opt/oracle/oradata \
+container-registry.oracle.com/database/free:latest
+```
 
 
 ```powershell
@@ -49,6 +60,8 @@ $ docker run -d -p 49161:1521 -e ORACLE_ENABLE_XDB=true oracleinanutshell/oracle
 ## For APEX user:
 
 $ docker run -d -p 49161:1521 -p 8080:8080 oracleinanutshell/oracle-xe-11g
+
+
 
 ```
 # Login apex_admin
@@ -100,15 +113,6 @@ https://blogdocardoso.com/linux-mint-instalando-o-oracle-sql-developer-4/
 https://oracle.github.io/odpi/doc/installation.html#linux
 
 
-# docker pull container-registry.oracle.com/database/free:latest
 
-# docker run -d --name app-oracle-db -p 1521:1521  -e ORACLE_PWD=oracle container-registry.oracle.com/database/free:latest
-
-#  sudo docker-compose -f ./docker-compose.free.yml up --build
 
 ```
-- docker pull container-registry.oracle.com/database/free:latest
-
-- docker run -d --name app-oracle-db -p 1521:1521  -e ORACLE_PWD=oracle container-registry.oracle.com/database/free:latest
-
--  sudo docker-compose -f ./docker-compose.free.yml up --build
